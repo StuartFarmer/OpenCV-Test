@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +17,45 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="opencv_logo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="US4-4i-sjW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QY-Lg-WSB">
+                                <rect key="frame" x="20" y="519" width="560" height="61"/>
+                                <color key="backgroundColor" red="0.92334980870000005" green="0.92334980870000005" blue="0.92334980870000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.98439447229113008" green="1" blue="0.96969327082233792" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCamera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QEL-hC-8L6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="US4-4i-sjW" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="2JV-QL-Jdg"/>
+                            <constraint firstItem="7QY-Lg-WSB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="8ft-1P-jQF"/>
+                            <constraint firstItem="US4-4i-sjW" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="GSF-0D-svv"/>
+                            <constraint firstItem="7QY-Lg-WSB" firstAttribute="centerX" secondItem="US4-4i-sjW" secondAttribute="centerX" id="hTJ-fA-eZV"/>
+                            <constraint firstItem="US4-4i-sjW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="k6t-gL-K1d"/>
+                            <constraint firstAttribute="trailing" secondItem="US4-4i-sjW" secondAttribute="trailing" id="mfY-hc-Fao"/>
+                            <constraint firstItem="7QY-Lg-WSB" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="499" id="sVG-zy-iiV"/>
+                            <constraint firstAttribute="bottom" secondItem="7QY-Lg-WSB" secondAttribute="bottom" constant="20" symbolic="YES" id="wVX-ru-bKt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="US4-4i-sjW" id="CUv-mU-3n5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="278" y="825"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="opencv_logo.gif" width="3298" height="3076"/>
+    </resources>
 </document>
